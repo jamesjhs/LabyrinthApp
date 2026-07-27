@@ -40,13 +40,17 @@ GitHub describes releases as deployable software iterations based on Git tags. F
 
 Recommended release stages:
 
-- `v0.1.0-docs`: documentation baseline.
-- `v0.2.0-skeleton`: first native Android project that opens on a device.
-- `v0.3.0-core`: maze generation, scoring, and pathfinding logic with tests.
-- `v0.4.0-prototype`: first playable native build.
-- `v0.5.0-alpha`: feature-complete internal alpha.
-- `v0.8.0-beta`: Play-ready beta candidate.
-- `v1.0.0`: first production release candidate or production release.
+- `v0.0.y-docs`: documentation, prerequisites, roadmap, and decision records.
+- `v0.1.y-skeleton`: first native Android project that opens on a device.
+- `v0.2.y-core`: maze generation, scoring, mode rules, and pathfinding logic with tests.
+- `v0.3.y-persistence`: local progress, scores, settings, run-state recovery, and lifecycle resilience.
+- `v0.4.y-rendering`: native rendering proof with measured performance.
+- `v0.5.y-playable`: input, movement, camera, and collision prototype.
+- `v0.6.y-alpha`: core gameplay loop, modes, HUD, minimap, hints, and local score flow.
+- `v0.7.y-polish`: visual, audio, haptics, accessibility, and licensed asset pass.
+- `v0.8.y-beta`: robustness, debugging, QA, performance, app-size, and license evidence.
+- `v0.9.y-store-prep`: monetization decision, Play readiness, signing, listing, and release process.
+- `v1.0.0`: first release candidate for Play testing or production review.
 
 Use pre-releases for builds that are not intended for general players. Use full releases only when the notes, artifacts, licenses, privacy posture, and test status are coherent.
 
@@ -239,9 +243,9 @@ Paid assets need extra discipline:
 
 ## Play Store Readiness Gates
 
-Each phase should ask Play readiness questions, not wait until the end.
+Each phase should ask Play readiness questions, not wait until the end. These gates follow the authoritative `0.0.y` through `0.9.y` roadmap in `docs/ROADMAP.md`.
 
-### Phase 0: Documentation
+### Phase 0 / `0.0.y`: Documentation And Decisions
 
 Required:
 
@@ -250,19 +254,22 @@ Required:
 - GitHub release/package workflow documented.
 - Asset licensing policy documented.
 - Play policy links recorded.
+- `docs/DECISIONS.md` records Phase 1 defaults for app ID, SDK levels, renderer, orientation, privacy, signing, monetization, Data Safety assumptions, target audience, and asset manifest location.
 
-### Phase 1: Android Skeleton
+### Phase 1 / `0.1.y`: Android Skeleton
 
 Required:
 
 - Application ID chosen.
-- Minimum SDK and target SDK chosen against current Play requirements.
+- Minimum SDK, target SDK, and compile SDK chosen against current Play requirements.
 - Version code/name strategy created.
 - Release signing strategy documented but secrets kept outside Git.
 - No unnecessary permissions.
 - Privacy assumptions recorded.
+- Placeholder app icon and launch screen clearly marked as temporary.
+- Initial window-inset and orientation behavior tested.
 
-### Phase 2: Core Logic
+### Phase 2 / `0.2.y`: Core Logic
 
 Required:
 
@@ -270,19 +277,50 @@ Required:
 - Save-data compatibility assumptions written down.
 - Score fairness rules documented if scores might ever be compared.
 - Debug seeds available for bug reports.
+- Any divergence from the original web-game rules documented.
 
-### Phase 3: Playable Prototype
+### Phase 3 / `0.3.y`: Persistence And Lifecycle
+
+Required:
+
+- Local progress/settings storage implemented.
+- Local score storage implemented or explicitly deferred with a replacement plan.
+- Recoverable run-state contract documented.
+- Orientation, Activity recreation, pause/resume, and process recreation behavior tested.
+- Data Safety assumptions rechecked against actual local storage behavior.
+
+### Phase 4 / `0.4.y`: Native Rendering Proof
+
+Required:
+
+- Renderer decision documented with rationale and replacement criteria.
+- Renderer pauses and resumes without burning background resources.
+- Asset manifest started before non-trivial textures, icons, sounds, or materials are added.
+- Initial app-size and texture-size budgets recorded.
+- Native-library, ABI, and 64-bit implications reviewed if any renderer dependency introduces native code.
+
+### Phase 5 / `0.5.y`: Playable Movement Prototype
 
 Required:
 
 - Internal release tag and GitHub pre-release.
 - Tested on at least one physical device.
 - Known issues listed.
-- Asset manifest started.
-- Accessibility risks noted.
-- No monetization code unless intentionally scoped.
+- Input-mode switching risks noted.
+- Motion-sickness, collision fairness, and control safe-area risks noted.
+- No online scoreboard, ads, analytics, or monetization code unless intentionally scoped.
 
-### Phase 4: Enhancement Pass
+### Phase 6 / `0.6.y`: Core Gameplay Alpha
+
+Required:
+
+- Timed, High Score, and Practice mode behavior documented.
+- Local-only score behavior matches privacy and fairness assumptions.
+- HUD, minimap, menu, and score overlays tested against window insets.
+- Store claims remain internal-only and do not imply unreleased features.
+- Known issues and missing web-feature parity items listed.
+
+### Phase 7 / `0.7.y`: Visual, Audio, Haptics, And Accessibility
 
 Required:
 
@@ -291,20 +329,41 @@ Required:
 - Audio licensing checked.
 - Haptics and motion settings reviewed.
 - Optional purchase boundaries considered for any theme/pack system.
+- Accessibility settings implemented for known risks or blockers recorded.
+- Store-screenshot direction reviewed for honest feature representation.
 
-### Phase 5: Robustness And Compliance
+### Phase 8 / `0.8.y`: Robustness, Debugging, QA, And Performance
 
 Required:
 
 - Current Google Play target API requirement checked.
-- Full release build created from clean source.
+- Debug report and seed replay avoid sensitive data.
+- Test matrix results recorded.
+- App-size and asset-size reports recorded.
 - Dependency and license audit completed.
 - Privacy policy need assessed.
 - Data safety answers drafted if required.
+- Play policy checklist pass completed.
+- GitHub pre-release includes test summary and Play readiness status.
+
+### Phase 9 / `0.9.y`: Monetization, Store Prep, And Play Compliance
+
+Required:
+
+- Full release build created from clean source.
+- Release build is not debuggable.
+- Signed AAB process documented.
+- Version code/name verified.
+- Current Google Play target API requirement checked again.
+- App permissions reviewed.
+- Privacy policy need assessed and policy drafted if required.
+- Data Safety answers match actual app behavior.
 - Store listing text and screenshots drafted.
 - Billing tests completed if monetization is present.
+- Target audience and content rating assumptions documented from actual implementation.
+- Dependency privacy, SDK, native-library, asset-license, and app-size reviews complete.
 
-### Phase 6: Release Candidate
+### Version `1.0.0`: Release Candidate
 
 Required:
 
@@ -314,6 +373,7 @@ Required:
 - Test summary attached or linked.
 - Known issues accepted.
 - Monetization, privacy, permissions, and age/content assumptions rechecked.
+- No known blocker remains for Play closed testing.
 
 ## Release Checklist
 
@@ -361,4 +421,3 @@ When release, package, monetization, or Play-readiness behavior changes, update:
 - `docs/PREREQUISITES.md` if the change affects setup.
 - `docs/ASSET_PIPELINE.md` if the change affects paid/free assets.
 - Future changelog/release notes.
-

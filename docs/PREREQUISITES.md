@@ -35,24 +35,28 @@ Before implementation, study or review:
 
 ## Initial Architecture Decisions To Make
 
-These decisions should be documented before Phase 1 code begins:
+Phase 1 defaults are recorded in `docs/DECISIONS.md`. Review that file before creating Android app code. If any default changes, update `docs/DECISIONS.md`, this file, `docs/ROADMAP.md`, and release/readiness notes where relevant.
+
+The current pre-code decisions cover:
 
 - Package name and app ID.
-- Minimum SDK and target SDK.
+- Minimum SDK, target SDK, and compile SDK.
 - Screen orientation policy.
 - How orientation changes, Activity recreation, pause/resume, and process recreation preserve game progress and current run state.
 - How the app detects and switches between touch controls and external mouse/keyboard input.
 - How the UI will consume Android window insets so HUD, controls, buttons, and overlays do not collide with the status bar, display cutout, gesture area, or navigation buttons.
-- Whether the first renderer is Canvas, SurfaceView, OpenGL ES, Filament, or libGDX.
-- Whether menus and HUD are pure Compose or a mix of Compose and renderer-drawn UI.
-- Whether local scores need Room immediately or can begin in DataStore.
-- Whether global/online scores are excluded entirely for version 1 or deferred as a later optional feature.
-- Whether version 1 is free, paid upfront, ad-supported, or monetized through optional one-time products/subscriptions.
-- What GitHub release/versioning workflow will be used before the first public build.
-- How deterministic maze seeds are represented and stored.
-- What accessibility settings are part of the first release.
-- What assets are placeholder-only and what assets are release-ready.
-- What visual style guide will carry the existing HTML/JS game's modern neon labyrinth feel into the native Android app.
+- First renderer and UI ownership.
+- Whether local scores begin in DataStore or Room.
+- Whether global/online scores are excluded from version 1.
+- Version 1 monetization posture.
+- GitHub release/versioning workflow.
+- Deterministic maze seed format.
+- First-release accessibility scope.
+- Placeholder and release-ready asset policy.
+- Visual style direction.
+- Release signing, Data Safety, target audience, content rating, native-library, and asset-manifest assumptions.
+
+Do not treat these decisions as permanent project law. Treat them as the starting contract for Phase 1 and update them when implementation evidence proves a better path.
 
 ## Visual And UX Prerequisites
 
@@ -182,14 +186,17 @@ Each test pass should record:
 - Prerequisites documented.
 - Roadmap reviewed and current phase confirmed.
 - Web source feature list reviewed.
-- Initial renderer decision made.
-- Package name chosen.
-- Minimum and target SDK chosen.
+- `docs/DECISIONS.md` reviewed.
+- Initial renderer decision recorded.
+- Package name and app ID chosen.
+- Minimum, target, and compile SDK chosen.
 - Offline-only score and progress behavior defined.
 - First release scope agreed.
 - Asset pipeline reviewed before adding textures, sprites, icons, or sound.
+- Asset manifest location chosen.
 - Visual style guide drafted before production UI or texture work begins.
 - Orientation, lifecycle, input-switching, performance, and window-inset strategy drafted before production gameplay begins.
 - GitHub release/package workflow reviewed.
 - Monetization model and Play Store readiness assumptions recorded.
+- Release signing, Data Safety, target audience, content rating, and native-library assumptions recorded.
 - Documentation update habit established.

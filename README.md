@@ -107,9 +107,11 @@ External resources needed:
 - Accessibility reference notes for motion, contrast, font scaling, touch targets, captions/subtitles where applicable, and haptic alternatives.
 - A test device matrix covering low-end phone, mid-range phone, tablet/foldable, and at least one current Android release.
 
-Detailed asset and texture notes live in `docs/ASSET_PIPELINE.md`. That document is the working Q&A for how brick textures, wall surfaces, sprites, UI graphics, icons, sounds, and future 3D materials should be created, named, stored, licensed, compressed, tested, and documented.
+Detailed asset and texture notes live in `docs/ASSET_PIPELINE.md`. That document is the working Q&A for how brick textures, wall surfaces, sprites, UI graphics, icons, sounds, and future 3D materials should be created, named, stored, licensed, compressed, tested, and documented. Asset records begin in `docs/ASSET_MANIFEST.md`.
 
 GitHub release, package, monetization, and Play Store readiness notes live in `docs/GITHUB_RELEASES_PACKAGES_PLAYSTORE.md`. That document defines how this repository should use GitHub Releases, GitHub Packages, release artifacts, version notes, monetization records, and Play readiness gates as the project moves from learning prototype to releasable Android product.
+
+Phase 1 implementation defaults and pre-code decisions live in `docs/DECISIONS.md`. That document records the initial application ID, SDK targets, renderer path, orientation policy, storage posture, offline score posture, monetization decision, signing assumptions, Data Safety assumptions, target audience assumption, asset manifest location, and accessibility scope.
 
 The active multi-phase roadmap lives in `docs/ROADMAP.md`. It defines the `0.x.y` development versioning scheme, current phase, proof tests, exit criteria, release-readiness notes, and next best prompts for each phase.
 
@@ -166,6 +168,7 @@ This README doubles as the project development blog. Every meaningful update sho
 | 2026-07-28 | Added visual and UX quality as a project prerequisite: the app should be futuristic, slick, comfortable, and aesthetically continuous with the existing HTML/JS game. |
 | 2026-07-28 | Added device-respect requirements for modest hardware performance, orientation-change resilience, adaptive touch/mouse/keyboard input, and Android system-bar/window-inset safety. |
 | 2026-07-28 | Added detailed `0.x.y` multi-phase roadmap with proof tests, release-readiness notes, honest-placeholder rules, and next best prompts for each development phase. |
+| 2026-07-28 | Reviewed documentation for contradictions and Play readiness gaps. Added `docs/DECISIONS.md`, aligned release/readiness phases with the roadmap, and recorded Phase 1 defaults for SDKs, app ID, renderer, storage, monetization, privacy, signing, target audience, and asset manifest location. |
 
 ## Debug Guide
 
@@ -238,6 +241,7 @@ Each implementation update should keep documentation current:
 - Update `docs/ASSET_PIPELINE.md` when texture formats, asset folders, naming rules, compression decisions, licensing requirements, or rendering assumptions change.
 - Update `docs/GITHUB_RELEASES_PACKAGES_PLAYSTORE.md` when release packaging, GitHub automation, monetization plans, billing requirements, or Play Store readiness gates change.
 - Update `docs/ROADMAP.md` when phase status, version numbers, exit criteria, proof tests, deferred features, or next best prompts change.
+- Update `docs/DECISIONS.md` when application identity, SDK levels, renderer, storage, orientation, monetization, privacy, signing, target audience, accessibility scope, or asset-manifest assumptions change.
 - Update the debug guide when new diagnostics are added.
 - Update the bugfix guide when a bug reveals a new class of failure.
 - Keep comments educational, high-level, and useful. Explain why systems exist, what important variables represent, and how functions fit into the game loop.
@@ -543,7 +547,7 @@ Current version: `0.0.0`.
 
 Current phase: Phase 0, repository and product groundwork.
 
-Documentation has been initialized. No Android source code has been written in this repository yet. The next best implementation step is Phase 1: create a launchable native Android skeleton with honest placeholders and no gameplay port.
+Documentation has been initialized and the pre-code decision record exists. No Android source code has been written in this repository yet. The next best implementation step is Phase 1: create a launchable native Android skeleton from `docs/DECISIONS.md` with honest placeholders and no gameplay port.
 
 ## References And Source Catalogue
 

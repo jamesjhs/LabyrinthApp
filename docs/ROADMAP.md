@@ -39,7 +39,7 @@ Current status:
 Next best prompt:
 
 ```text
-Using the README, prerequisites, roadmap, asset pipeline, and GitHub/Play readiness docs, create Phase 1 version 0.1.0 of the native Android app skeleton. Do not port gameplay yet. Set up a Kotlin/Gradle Android project with a minimal launchable Activity, Compose-ready structure, documentation comments, no unnecessary permissions, and a placeholder screen that clearly states this is the Labyrinth native Android foundation.
+Using the README, prerequisites, decision record, roadmap, asset pipeline, and GitHub/Play readiness docs, create Phase 1 version 0.1.0 of the native Android app skeleton. Do not port gameplay yet. Set up a Kotlin/Gradle Android project with a minimal launchable Activity, Compose-ready structure, documentation comments, no unnecessary permissions, and a placeholder screen that clearly states this is the Labyrinth native Android foundation.
 ```
 
 ## Phase 0: Repository And Product Groundwork
@@ -55,10 +55,13 @@ Current work:
 - Define Play Store, monetization, GitHub Releases/Packages, asset pipeline, visual style, input, orientation, lifecycle, and safe-area requirements.
 - Add official and academic source catalogue.
 - Add VS Code Android setup runbook.
+- Add a project decision record for Phase 1 defaults, release assumptions, Play readiness assumptions, and known pre-code decisions.
 
 Proof tests:
 
 - Documentation is internally consistent.
+- Release/readiness phase names match the roadmap's `0.0.y` through `1.0.0` version model.
+- Pre-code decisions needed for Phase 1 are recorded in `docs/DECISIONS.md`.
 - Current web game path has been reviewed.
 - Roadmap identifies current phase and next best prompt.
 
@@ -66,6 +69,7 @@ Exit criteria:
 
 - README links all required planning documents.
 - `docs/PREREQUISITES.md` is complete enough to begin Phase 1.
+- `docs/DECISIONS.md` exists and records Phase 1 defaults.
 - `docs/ASSET_PIPELINE.md` exists.
 - `docs/GITHUB_RELEASES_PACKAGES_PLAYSTORE.md` exists.
 - `docs/ROADMAP.md` exists.
@@ -85,7 +89,7 @@ Review the current documentation set for contradictions, missing pre-code decisi
 ```
 
 ```text
-Create Phase 1 version 0.1.0: native Android skeleton only, with no gameplay port yet.
+Create Phase 1 version 0.1.0 from the documented Phase 1 defaults: native Android skeleton only, with no gameplay port yet.
 ```
 
 ## Phase 1: Native Android Skeleton
@@ -98,7 +102,7 @@ Work:
 
 - Create Kotlin-first Android project.
 - Add Gradle wrapper and standard Android project files.
-- Choose application ID, minimum SDK, target SDK, versioning scheme, and package structure.
+- Apply or deliberately revise the documented application ID, minimum SDK, target SDK, compile SDK, versioning scheme, and package structure from `docs/DECISIONS.md`.
 - Add a single launch Activity.
 - Add Compose setup for future menus, overlays, HUD, settings, and score screens.
 - Add placeholder launch screen with native styling inspired by the web version's neon/dark labyrinth mood.
@@ -698,4 +702,3 @@ Prepare the 1.0.0 GitHub Release notes and Play testing release notes from the c
 - If a feature is deferred, record where it moved and why.
 - If placeholder behavior remains, record whether it is acceptable for the next phase or a release blocker.
 - Keep release readiness notes blunt. Optimism is not a test result.
-

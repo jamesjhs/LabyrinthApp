@@ -173,7 +173,7 @@ Every non-trivial asset should have a record in an asset manifest. At minimum:
 - Date added.
 - Notes and known limitations.
 
-The manifest can begin as `docs/ASSET_MANIFEST.md` or a CSV. If the asset list grows, move to a structured format such as JSON, YAML, or TOML.
+The manifest should begin as `docs/ASSET_MANIFEST.md`, matching the current project decision record. If the asset list grows or tooling needs structured input, move to JSON, YAML, or TOML with a dated update in `docs/DECISIONS.md`.
 
 ### Can AI-generated textures be used?
 
@@ -377,12 +377,11 @@ Review status:
 Notes:
 ```
 
-## Open Decisions
+## Current Decision Links
 
-- Which renderer will own runtime texture loading?
-- Will the first playable prototype use Android Canvas, OpenGL ES, Filament, or libGDX?
-- Will first-release walls use single albedo textures only, or a fuller material set?
-- What is the first release texture size budget?
-- Will texture compression be handled directly in the build, through renderer tooling, or through Play Asset Delivery later?
-- Where will the first asset manifest live: Markdown, CSV, JSON, YAML, or TOML?
-
+- Phase 1 starts with a `SurfaceView`-backed Android Canvas rendering proof path, as recorded in `docs/DECISIONS.md`.
+- The first asset manifest lives at `docs/ASSET_MANIFEST.md`.
+- First-release walls should start with albedo textures only unless the chosen renderer and performance budget justify richer material maps.
+- The first release texture size budget remains a Phase 4/Phase 7 measurement decision and must be recorded before release-quality texture import.
+- Texture compression should be chosen after the renderer proof. ASTC remains the preferred modern target, with ETC2 fallback considered for broad support.
+- Play Asset Delivery is deferred until asset size justifies the added complexity.
