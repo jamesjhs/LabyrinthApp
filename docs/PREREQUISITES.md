@@ -84,6 +84,8 @@ Needed asset categories:
 
 Do not include unlicensed assets in the repository.
 
+Read `docs/ASSET_PIPELINE.md` before importing any visual asset. It defines the expected Q&A, naming rules, source-file policy, compression approach, licensing records, and test checks for game textures and graphics.
+
 ## Test Device Matrix
 
 The first useful matrix should include:
@@ -117,5 +119,5 @@ Each test pass should record:
 - Minimum and target SDK chosen.
 - Offline-only score and progress behavior defined.
 - First release scope agreed.
+- Asset pipeline reviewed before adding textures, sprites, icons, or sound.
 - Documentation update habit established.
-

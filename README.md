@@ -101,6 +101,8 @@ External resources needed:
 - Accessibility reference notes for motion, contrast, font scaling, touch targets, captions/subtitles where applicable, and haptic alternatives.
 - A test device matrix covering low-end phone, mid-range phone, tablet/foldable, and at least one current Android release.
 
+Detailed asset and texture notes live in `docs/ASSET_PIPELINE.md`. That document is the working Q&A for how brick textures, wall surfaces, sprites, UI graphics, icons, sounds, and future 3D materials should be created, named, stored, licensed, compressed, tested, and documented.
+
 ## Play Store And Android Compliance Baseline
 
 This section must be revisited before every release because requirements change.
@@ -196,6 +198,7 @@ This README doubles as the project development blog. Every meaningful update sho
 | Date | Entry |
 | --- | --- |
 | 2026-07-28 | Initialized project documentation. Captured the native Android goal, offline-only constraint, web-game feature baseline, proposed dependencies, Play Store compliance baseline, timeline, debug guide, and documentation standards. |
+| 2026-07-28 | Added asset and texture pipeline documentation for Android resources, game textures, file placement, licensing, compression, density handling, and Q&A around creating brick and maze-surface assets. |
 
 ## Debug Guide
 
@@ -265,6 +268,7 @@ Each implementation update should keep documentation current:
 - Add a short development blog entry.
 - Update setup instructions if dependencies, SDK versions, Gradle plugins, or tools change.
 - Update the technical reference when game rules, data models, rendering, persistence, or input behavior changes.
+- Update `docs/ASSET_PIPELINE.md` when texture formats, asset folders, naming rules, compression decisions, licensing requirements, or rendering assumptions change.
 - Update the debug guide when new diagnostics are added.
 - Update the bugfix guide when a bug reveals a new class of failure.
 - Keep comments educational, high-level, and useful. Explain why systems exist, what important variables represent, and how functions fit into the game loop.
@@ -272,4 +276,3 @@ Each implementation update should keep documentation current:
 ## Current Status
 
 Documentation has been initialized. No Android source code has been written in this repository yet.
-
