@@ -111,6 +111,8 @@ Detailed asset and texture notes live in `docs/ASSET_PIPELINE.md`. That document
 
 GitHub release, package, monetization, and Play Store readiness notes live in `docs/GITHUB_RELEASES_PACKAGES_PLAYSTORE.md`. That document defines how this repository should use GitHub Releases, GitHub Packages, release artifacts, version notes, monetization records, and Play readiness gates as the project moves from learning prototype to releasable Android product.
 
+The active multi-phase roadmap lives in `docs/ROADMAP.md`. It defines the `0.x.y` development versioning scheme, current phase, proof tests, exit criteria, release-readiness notes, and next best prompts for each phase.
+
 ## Play Store And Android Compliance Baseline
 
 This section must be revisited before every release because requirements change.
@@ -135,69 +137,21 @@ Initial compliance posture:
 
 ## Development Timeline
 
-### Phase 0: Documentation And Source Study
+The short timeline below is only a summary. The authoritative roadmap is `docs/ROADMAP.md`.
 
-Status: started.
-
-Goals:
-
-- Document the current web game's features and architecture.
-- Identify which web-only systems must become native Android systems.
-- Establish educational documentation standards.
-- Choose the initial Android architecture.
-- Create prerequisites and setup notes before code begins.
-
-### Phase 1: Native Project Skeleton
-
-Goals:
-
-- Create the Android project with Kotlin, Gradle, and a minimal runnable native app.
-- Add a clean module/package structure.
-- Add static analysis and test infrastructure.
-- Add a placeholder menu and empty game surface.
-- Document every new file's role as it is introduced.
-
-### Phase 2: Core Game Logic
-
-Goals:
-
-- Port maze generation, cell/wall representation, shortest-path hints, level sizing, timers, scoring, and mode rules into pure Kotlin.
-- Write unit tests for maze solvability, pathfinding, scoring, level progression, and edge cases.
-- Keep the core logic independent from Android UI so it can be tested quickly.
-
-### Phase 3: Playable Native Prototype
-
-Goals:
-
-- Implement first-person movement, camera state, touch controls, collision, and level transitions.
-- Render the maze using the initial native rendering path.
-- Add HUD, minimap, level preview, game over, practice mode, high-score mode, and timed mode.
-- Save local progress and local scores.
-
-### Phase 4: Android Enhancement Pass
-
-Goals:
-
-- Add richer textures, native sound effects, haptics, improved input tuning, accessibility options, and performance settings.
-- Add debug overlays for FPS, frame time, current cell, seed, level size, path length, and collision state.
-- Add deterministic seed replay for bug reports.
-
-### Phase 5: Robustness And Compliance
-
-Goals:
-
-- Run full test suite and device testing.
-- Profile performance, memory, startup time, thermal behavior, and battery impact.
-- Verify Play Store policy requirements, target SDK, privacy posture, app signing, store listing assets, accessibility, and release build behavior.
-
-### Phase 6: Release Candidate
-
-Goals:
-
-- Freeze gameplay behavior for release.
-- Complete technical reference sections.
-- Produce release notes.
-- Verify all documentation matches actual implementation.
+| Version range | Phase | Primary outcome |
+| --- | --- | --- |
+| `0.0.y` | Repository and product groundwork | Documentation, source review, prerequisites, roadmap |
+| `0.1.y` | Native Android skeleton | Launchable Kotlin/Android foundation with honest placeholders |
+| `0.2.y` | Core game logic port | Testable maze, pathfinding, scoring, timer, and mode rules |
+| `0.3.y` | Persistence and lifecycle resilience | Progress, scores, settings, run-state recovery, orientation safety |
+| `0.4.y` | Native rendering proof | Generated maze renders natively with measured performance |
+| `0.5.y` | Input, movement, camera, collision | Playable movement with touch and external input support |
+| `0.6.y` | Game flow, modes, HUD, minimap | Web-game feature loop exists natively |
+| `0.7.y` | Visual, audio, haptics, accessibility | Polished futuristic style, licensed assets, settings, feedback |
+| `0.8.y` | Robustness, debugging, QA, performance | Beta-quality diagnostics, seed replay, test matrix evidence |
+| `0.9.y` | Monetization, store prep, Play compliance | Play readiness, release build process, monetization decision |
+| `1.0.0` | Initial release candidate | First Play testing/production candidate |
 
 ## Development Blog
 
@@ -211,6 +165,7 @@ This README doubles as the project development blog. Every meaningful update sho
 | 2026-07-28 | Added source-reliability rules, a VS Code Android setup runbook, and an annotated academic/industrial reference catalogue to reduce guesswork during implementation. |
 | 2026-07-28 | Added visual and UX quality as a project prerequisite: the app should be futuristic, slick, comfortable, and aesthetically continuous with the existing HTML/JS game. |
 | 2026-07-28 | Added device-respect requirements for modest hardware performance, orientation-change resilience, adaptive touch/mouse/keyboard input, and Android system-bar/window-inset safety. |
+| 2026-07-28 | Added detailed `0.x.y` multi-phase roadmap with proof tests, release-readiness notes, honest-placeholder rules, and next best prompts for each development phase. |
 
 ## Debug Guide
 
@@ -282,6 +237,7 @@ Each implementation update should keep documentation current:
 - Update the technical reference when game rules, data models, rendering, persistence, or input behavior changes.
 - Update `docs/ASSET_PIPELINE.md` when texture formats, asset folders, naming rules, compression decisions, licensing requirements, or rendering assumptions change.
 - Update `docs/GITHUB_RELEASES_PACKAGES_PLAYSTORE.md` when release packaging, GitHub automation, monetization plans, billing requirements, or Play Store readiness gates change.
+- Update `docs/ROADMAP.md` when phase status, version numbers, exit criteria, proof tests, deferred features, or next best prompts change.
 - Update the debug guide when new diagnostics are added.
 - Update the bugfix guide when a bug reveals a new class of failure.
 - Keep comments educational, high-level, and useful. Explain why systems exist, what important variables represent, and how functions fit into the game loop.
@@ -583,7 +539,11 @@ Before any Play upload:
 
 ## Current Status
 
-Documentation has been initialized. No Android source code has been written in this repository yet.
+Current version: `0.0.0`.
+
+Current phase: Phase 0, repository and product groundwork.
+
+Documentation has been initialized. No Android source code has been written in this repository yet. The next best implementation step is Phase 1: create a launchable native Android skeleton with honest placeholders and no gameplay port.
 
 ## References And Source Catalogue
 

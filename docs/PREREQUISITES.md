@@ -146,6 +146,8 @@ Read `docs/ASSET_PIPELINE.md` before importing any visual asset. It defines the 
 
 Read `docs/GITHUB_RELEASES_PACKAGES_PLAYSTORE.md` before creating the Android project skeleton. It defines the expected GitHub Releases and Packages usage, release artifact rules, monetization-first design checks, and Play Store readiness gates.
 
+Read `docs/ROADMAP.md` before starting implementation. It defines the current version, current phase, proof tests, exit criteria, release-readiness notes, and next best prompts.
+
 ## Test Device Matrix
 
 The first useful matrix should include:
@@ -178,6 +180,7 @@ Each test pass should record:
 
 - README initialized.
 - Prerequisites documented.
+- Roadmap reviewed and current phase confirmed.
 - Web source feature list reviewed.
 - Initial renderer decision made.
 - Package name chosen.
