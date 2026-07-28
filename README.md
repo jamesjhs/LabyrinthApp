@@ -169,6 +169,7 @@ This README doubles as the project development blog. Every meaningful update sho
 | 2026-07-28 | Added device-respect requirements for modest hardware performance, orientation-change resilience, adaptive touch/mouse/keyboard input, and Android system-bar/window-inset safety. |
 | 2026-07-28 | Added detailed `0.x.y` multi-phase roadmap with proof tests, release-readiness notes, honest-placeholder rules, and next best prompts for each development phase. |
 | 2026-07-28 | Reviewed documentation for contradictions and Play readiness gaps. Added `docs/DECISIONS.md`, aligned release/readiness phases with the roadmap, and recorded Phase 1 defaults for SDKs, app ID, renderer, storage, monetization, privacy, signing, target audience, and asset manifest location. |
+| 2026-07-28 | Created Phase 1 native Android skeleton version `0.1.0`: Kotlin-first app module, Gradle wrapper, Compose launch Activity, temporary native styling and icons, no requested permissions, debug/release build types, and local unit-test skeleton. |
 
 ## Debug Guide
 
@@ -266,9 +267,12 @@ This section is deliberately beginner-friendly and explicit. It explains how to 
 
 Current repository status:
 
-- This repository is documentation-only right now.
-- No Android project, Gradle wrapper, app module, or source code has been created yet.
-- The commands that refer to `gradlew.bat`, `app`, `assembleDebug`, or `installDebug` will become active after Phase 1 creates the Android project skeleton.
+- This repository now contains the Phase 1 native Android skeleton.
+- The app is Kotlin-first, uses Jetpack Compose for the placeholder launch screen, and has no requested permissions.
+- The current Android identity is `com.jahosi.labyrinth`, with debug builds using `com.jahosi.labyrinth.debug`.
+- SDK choices follow `docs/DECISIONS.md`: minimum SDK 26, compile SDK 36, target SDK 36.
+- Versioning starts at `versionName` `0.1.0` and `versionCode` `100`.
+- Gameplay is not implemented yet.
 
 ### 1. Install Git
 
@@ -349,7 +353,7 @@ Beginner-friendly option:
 java -version
 ```
 
-Do not guess the Java version permanently. When Phase 1 chooses Android Gradle Plugin and Gradle versions, update this section with the exact required JDK.
+Phase 1 uses Android Gradle Plugin `9.3.0` and Gradle wrapper `9.5.0`. Current Android Gradle Plugin compatibility notes list JDK 17 as the required baseline. The bundled Android Studio runtime is acceptable when it satisfies that requirement.
 
 ### 6. Set Environment Variables
 
@@ -437,11 +441,11 @@ C:\GitHub\LabyrinthApp
 git status
 ```
 
-At the current documentation-only stage, there is no Android build command yet.
+At the current Phase 1 stage, build and test commands are available through `gradlew.bat`.
 
-### 10. Build The App After Phase 1 Creates The Android Project
+### 10. Build The App
 
-Once the Android skeleton exists, use the Gradle wrapper from the repository root. Android's command-line build docs recommend using the wrapper that lives in each Android project.
+Use the Gradle wrapper from the repository root. Android's command-line build docs recommend using the wrapper that lives in each Android project.
 
 Build a debug APK:
 
@@ -455,7 +459,7 @@ Run tests:
 .\gradlew.bat test
 ```
 
-Build a release App Bundle when the release configuration exists:
+Build a release App Bundle for packaging checks:
 
 ```powershell
 .\gradlew.bat :app:bundleRelease
@@ -465,7 +469,7 @@ Official Android command-line build guidance: https://developer.android.com/buil
 
 ### 11. Install The Debug App On A Device
 
-Once an app module exists and a device is connected:
+Once a device or emulator is connected:
 
 ```powershell
 .\gradlew.bat :app:installDebug
@@ -487,7 +491,11 @@ To view device logs:
 adb logcat
 ```
 
-After the Android package name exists, this README should add a filtered command for Labyrinth-specific logs.
+Filtered Labyrinth logs can be viewed with:
+
+```powershell
+adb logcat | Select-String "com.jahosi.labyrinth"
+```
 
 ### 13. Common Beginner Problems
 
@@ -543,11 +551,15 @@ Before any Play upload:
 
 ## Current Status
 
-Current version: `0.0.0`.
+Current version: `0.1.0`.
 
-Current phase: Phase 0, repository and product groundwork.
+Current phase: Phase 1, native Android skeleton.
 
-Documentation has been initialized and the pre-code decision record exists. No Android source code has been written in this repository yet. The next best implementation step is Phase 1: create a launchable native Android skeleton from `docs/DECISIONS.md` with honest placeholders and no gameplay port.
+The repository now has a launchable native Android skeleton built from `docs/DECISIONS.md`: Kotlin-first Gradle project, app module, single Compose launch Activity, temporary neon/dark placeholder screen, temporary launcher icons, no permissions, debug/release build types, and a local unit-test skeleton. The build is skeleton-only and makes no gameplay claims.
+
+## Thoughts for tweaks in future
+
+This section will be used to add features that come to mind from both developers Rebecca and James, if needed - its contents can be later referenced/incorporated into pre-release phases, or borne in mind with future iterations or releases, (or discounted!). 
 
 ## References And Source Catalogue
 

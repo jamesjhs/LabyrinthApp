@@ -390,6 +390,22 @@ FodyWeavers.xsd
 # Local History for Visual Studio Code
 .history/
 
+# Android / Gradle
+.gradle/
+.gradle-wrapper-bootstrap/
+**/build/
+local.properties
+captures/
+*.apk
+*.aab
+*.ap_
+*.aar
+*.hprof
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
 # Windows Installer files from build outputs
 *.cab
 *.msi

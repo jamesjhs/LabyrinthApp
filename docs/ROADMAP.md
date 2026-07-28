@@ -681,8 +681,8 @@ Prepare the 1.0.0 GitHub Release notes and Play testing release notes from the c
 
 | Version range | Phase | Status | Release intent |
 | --- | --- | --- | --- |
-| `0.0.y` | Repository and product groundwork | Current | Documentation only |
-| `0.1.y` | Native Android skeleton | Not started | Internal pre-release |
+| `0.0.y` | Repository and product groundwork | Complete | Documentation only |
+| `0.1.y` | Native Android skeleton | Current | Internal pre-release |
 | `0.2.y` | Core game logic port | Not started | Internal pre-release |
 | `0.3.y` | Persistence and lifecycle resilience | Not started | Internal pre-release |
 | `0.4.y` | Native rendering proof | Not started | Internal pre-release |

@@ -1,0 +1,6 @@
+<!-- Temporary Phase 1 adaptive launcher icon. Replace before Play-ready release. -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/temporary_icon_background" />
+    <foreground android:drawable="@drawable/temporary_launcher_foreground" />
+    <monochrome android:drawable="@drawable/temporary_launcher_monochrome" />
+</adaptive-icon>
