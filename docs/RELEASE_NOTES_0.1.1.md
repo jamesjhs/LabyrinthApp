@@ -1,4 +1,4 @@
-# Labyrinth v0.1.0-skeleton Pre-Release Notes
+# Labyrinth v0.1.1-skeleton Pre-Release Notes
 
 ## Summary
 
@@ -8,12 +8,13 @@ This is an internal GitHub pre-release candidate for the Phase 1 native Android 
 
 - Added Kotlin-first Android app module with application ID `com.jahosi.labyrinth`.
 - Set minimum SDK 26, compile SDK 36, target SDK 36.
-- Started Android versioning at `versionName` `0.1.0` and `versionCode` `100`.
+- Advanced Android versioning to `versionName` `0.1.1` and `versionCode` `101`.
 - Added Gradle wrapper targeting Gradle `9.5.0`.
 - Added debug and release build types.
 - Added one launch Activity using Jetpack Compose.
 - Added native placeholder launch screen with status/navigation bar safe-area handling.
 - Added temporary adaptive launcher icons marked temporary in resource comments.
+- Fixed a startup crash caused by hosting `ComposeView` from a raw `Activity`; the app now uses `ComponentActivity` with Compose `setContent`.
 
 ## Gameplay
 

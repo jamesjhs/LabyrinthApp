@@ -170,6 +170,7 @@ This README doubles as the project development blog. Every meaningful update sho
 | 2026-07-28 | Added detailed `0.x.y` multi-phase roadmap with proof tests, release-readiness notes, honest-placeholder rules, and next best prompts for each development phase. |
 | 2026-07-28 | Reviewed documentation for contradictions and Play readiness gaps. Added `docs/DECISIONS.md`, aligned release/readiness phases with the roadmap, and recorded Phase 1 defaults for SDKs, app ID, renderer, storage, monetization, privacy, signing, target audience, and asset manifest location. |
 | 2026-07-28 | Created Phase 1 native Android skeleton version `0.1.0`: Kotlin-first app module, Gradle wrapper, Compose launch Activity, temporary native styling and icons, no requested permissions, debug/release build types, and local unit-test skeleton. |
+| 2026-07-28 | Advanced the skeleton to `0.1.1` after device log review found a real Compose startup crash. Restored `ComponentActivity` hosting, kept the APK permission dump clean, installed and launched the debug APK on device `R5CY101SY7E`, and confirmed no fresh `FATAL EXCEPTION` on startup. |
 
 ## Debug Guide
 
@@ -271,7 +272,7 @@ Current repository status:
 - The app is Kotlin-first, uses Jetpack Compose for the placeholder launch screen, and has no requested permissions.
 - The current Android identity is `com.jahosi.labyrinth`, with debug builds using `com.jahosi.labyrinth.debug`.
 - SDK choices follow `docs/DECISIONS.md`: minimum SDK 26, compile SDK 36, target SDK 36.
-- Versioning starts at `versionName` `0.1.0` and `versionCode` `100`.
+- Current skeleton patch is `versionName` `0.1.1` and `versionCode` `101`.
 - Gameplay is not implemented yet.
 
 ### 1. Install Git
@@ -551,11 +552,11 @@ Before any Play upload:
 
 ## Current Status
 
-Current version: `0.1.0`.
+Current version: `0.1.1`.
 
 Current phase: Phase 1, native Android skeleton.
 
-The repository now has a launchable native Android skeleton built from `docs/DECISIONS.md`: Kotlin-first Gradle project, app module, single Compose launch Activity, temporary neon/dark placeholder screen, temporary launcher icons, no permissions, debug/release build types, and a local unit-test skeleton. The build is skeleton-only and makes no gameplay claims.
+The repository now has a launchable native Android skeleton built from `docs/DECISIONS.md`: Kotlin-first Gradle project, app module, single Compose launch Activity, temporary neon/dark placeholder screen, temporary launcher icons, no permissions, debug/release build types, and a local unit-test skeleton. Version `0.1.1` fixes the initial Compose startup crash found in ADB logs and has been installed and launched on one attached device. The build is skeleton-only and makes no gameplay claims.
 
 ## Thoughts for tweaks in future
 
