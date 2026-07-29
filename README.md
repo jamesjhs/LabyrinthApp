@@ -569,7 +569,7 @@ The player is an explorer and collector who has made this environment their expl
 
 The theme of the collectables can be the flora/fauna/minerals/technology of the planet on which the Labyrinth generator sits. 
 
-For example: collecting all blueprint parts of a ship (pilot dashboard, boosters, warp drive etc) reveals a final collectable of a player's ship which unlocks a hidden theme. 
+For example: collecting all blueprint parts of a ship (pilot dashboard, boosters, warp drive etc) reveals a final collectable of a player's ship which unlocks a hidden theme (like the player is using the ship to fly to a new area on the planet). 
 
 For example: collecting a certain amount of flora reveals a final collectable of a potion which in turn increases the amount of lives that a player has. 
 
