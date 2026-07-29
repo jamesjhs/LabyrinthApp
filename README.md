@@ -562,6 +562,28 @@ The repository now has a launchable native Android skeleton built from `docs/DEC
 
 This section will be used to add features that come to mind from both developers Rebecca and James, if needed - its contents can be later referenced/incorporated into pre-release phases, or borne in mind with future iterations or releases, (or discounted!). 
 
+(Rebecca Thoughts)
+World-building: (asking the questions: Why does this labyrinth system exist and why is the player having to do this?) 
+
+The player is an explorer and collector who has made this environment their exploration target at present. The generated labyrinths are the areas where the player explores and collects. Using this concept we can add a collectables system in the same way as TaskIt. Each labyrinth generated also has at least one collectable generated item. The player collects these until a collection is complete which in turn unlocks new maze themes, avatar adornments etc. (we can use this premise to have a continuing theme/asset production, so there are always new themes/assets for the player to acheive) 
+
+The theme of the collectables can be the flora/fauna/minerals/technology of the planet on which the Labyrinth generator sits. 
+
+Acheivements
+
+We can incorporate hidden Easter Egg acheivements as well as trackable acheivements
+
+Easter Egg acheivements:
+    - Hit a dead end 100 times
+    - Completed a maze in the nick of time 5 times with less than 10 seconds remaining
+
+Trackable acheivements
+    - Complete your first labyrinth
+    -  
+
+
+
+
 ## References And Source Catalogue
 
 This list is intentionally broad. It is the project shelf: official platform references for facts that must be current, and academic or industrial references for algorithms and design concepts that should not be improvised.
