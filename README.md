@@ -569,17 +569,20 @@ The player is an explorer and collector who has made this environment their expl
 
 The theme of the collectables can be the flora/fauna/minerals/technology of the planet on which the Labyrinth generator sits. 
 
-Acheivements
+For example: collecting all blueprint parts of a ship (pilot dashboard, boosters, warp drive etc) reveals a final collectable of a player's ship which unlocks a hidden theme. 
 
-We can incorporate hidden Easter Egg acheivements as well as trackable acheivements
+For example: collecting a certain amount of flora reveals a final collectable of a potion which in turn increases the amount of lives that a player has. 
+
+ACHIEVEMENTS
+
+We can incorporate hidden Easter Egg acheivements as well as trackable acheivements.
 
 Easter Egg acheivements:
-    - Hit a dead end 100 times
-    - Completed a maze in the nick of time 5 times with less than 10 seconds remaining
+Hit a dead end 100 times;
+Completed a maze in the nick of time 5 times with less than 10 seconds remaining;
 
-Trackable acheivements
-    - Complete your first labyrinth
-    -  
+Trackable acheivements:
+Complete your first labyrinth; 
 
 
 
